@@ -18,10 +18,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-	<dependencies>
-
-	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -36,6 +33,13 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<goals>install</goals>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -43,4 +47,9 @@
 		<module>pet-clinic-data</module>
 		<module>pet-clinic-web</module>
 	</modules>
+	
+	<scm>
+		<developerConnection>scm:git:https://github.com/benNjogu/keytech-pet-clinic.git</developerConnection>
+	</scm>
+	
 </project>
