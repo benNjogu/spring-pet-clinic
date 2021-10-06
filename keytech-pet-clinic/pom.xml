@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.keytech</groupId>
 	<artifactId>keytech-pet-clinic</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>keytech-pet-clinic</name>
 	<description>Keytech Pet Clinic Project</description>
@@ -36,6 +36,7 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
 					<goals>install</goals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
 		</plugins>
