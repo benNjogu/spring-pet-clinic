@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.keytech</groupId>
 	<artifactId>keytech-pet-clinic</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>keytech-pet-clinic</name>
 	<description>Keytech Pet Clinic Project</description>
@@ -49,7 +49,7 @@
 	
 	<scm>
 		<developerConnection>scm:git:https://github.com/benNjogu/keytech-pet-clinic.git</developerConnection>
-	  <tag>keytech-pet-clinic-0.0.2</tag>
+	  <tag>HEAD</tag>
   </scm>
 	
 </project>
