@@ -4,8 +4,9 @@ import java.util.Set;
 
 import com.keytech.Model.Pet;
 import com.keytech.Services.CrudService;
+import com.keytech.Services.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long>{
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService{
 
 	@Override
 	public Pet findById(Long id) {

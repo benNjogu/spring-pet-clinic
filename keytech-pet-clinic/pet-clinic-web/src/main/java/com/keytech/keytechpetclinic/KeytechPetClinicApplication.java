@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.keytech.Controllers")
+@ComponentScan(basePackages = {"com.keytech.Controllers", "com.keytech.Bootstrap"})
 public class KeytechPetClinicApplication {
 
 	public static void main(String[] args) {
