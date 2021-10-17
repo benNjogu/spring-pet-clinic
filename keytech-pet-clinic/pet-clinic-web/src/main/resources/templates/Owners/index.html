@@ -9,6 +9,19 @@
 <body>
     
     <h1 th:text="'Owners Index Page'">Index Page</h1>
-    
+     <table>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+        <tr th:each="owner : ${owners}">
+            <td th:text = "${owner?.id}">123</td>
+            <td th:text = "${owner?.firstName}">Spring In Action</td>
+            <td th:text = "${owner?.lastName}">Wrox</td>
+        </tr>
+
+    </table>
+
 </body>
 </html>
