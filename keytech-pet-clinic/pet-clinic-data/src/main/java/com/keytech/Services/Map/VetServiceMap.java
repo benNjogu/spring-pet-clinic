@@ -2,10 +2,12 @@ package com.keytech.Services.Map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.keytech.Model.Vet;
-import com.keytech.Services.CrudService;
 import com.keytech.Services.VetService;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{
 
 	@Override

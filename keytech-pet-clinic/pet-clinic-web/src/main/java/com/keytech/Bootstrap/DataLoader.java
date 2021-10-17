@@ -7,8 +7,6 @@ import com.keytech.Services.OwnerService;
 import com.keytech.Model.Owner;
 import com.keytech.Model.Vet;
 import com.keytech.Services.VetService;
-import com.keytech.Services.Map.OwnerServiceMap;
-import com.keytech.Services.Map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner{
@@ -16,12 +14,12 @@ public class DataLoader implements CommandLineRunner{
 	private final OwnerService ownerService;
 	private final VetService vetService;
 	
-	public DataLoader() {
+	public DataLoader(OwnerService ownerService, VetService vetService) {
 		super();
-		
-		ownerService = new OwnerServiceMap();
-		vetService = new VetServiceMap();
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
+
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -51,8 +49,8 @@ public class DataLoader implements CommandLineRunner{
 		
 		Vet vet2 = new Vet();
 		vet2.setId(2L);
-		vet2.setFirstName("L");
-		vet2.setLastName("E");
+		vet2.setFirstName("LE");
+		vet2.setLastName("Kimanga");
 		
 		vetService.save(vet2);
 		
