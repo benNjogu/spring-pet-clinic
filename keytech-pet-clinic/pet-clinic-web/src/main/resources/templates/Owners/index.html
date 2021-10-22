@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Owners</title>
-</head>
-<body>
-    
-    <h2 th:text="'Owners'">Index Page</h2>
-     <table class="table table-striped">
-        <tr>
-            <th style="width: 200px;">ID</th>
-            <th style="width: 150px;">FirstName</th>
-            <th style="width: 150px;">LastName</th>
-        </tr>
-        <tr th:each="owner : ${owners}">
-            <td th:text = "${owner?.id}">123</td>
-            <td th:text = "${owner?.firstName}">Mr</td>
-            <td th:text = "${owner?.lastName}">Owner</td>
-        </tr>
 
-    </table>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pet Owners</title>
+</head>
+
+<body>
+
+	<h2 th:text="'Owners'">Index Page</h2>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th style="width: 200px;">ID</th>
+				<th style="width: 150px;">FirstName</th>
+				<th style="width: 150px;">LastName</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="owner : ${owners}">
+				<td th:text="${owner?.id}">123</td>
+				<td th:text="${owner?.firstName}">Mr</td>
+				<td th:text="${owner?.lastName}">Owner</td>
+			</tr>
+		</tbody>
+	</table>
 
 </body>
+
 </html>

@@ -10,17 +10,20 @@
     
     <h2 th:text="'Vets'">Index Page</h2>
      <table class="table table-striped">
+     <thead>
         <tr>
             <th>ID</th>
             <th>firstName</th>
             <th>lastName</th>
         </tr>
+     </thead>
+     <tbody>
         <tr th:each="vet : ${vets}">
             <td th:text = "${vet.id}">123</td>
             <td th:text = "${vet.firstName}">Mr</td>
             <td th:text = "${vet.lastName}">Vet</td>
         </tr>
-
+     </tbody>
     </table>
     
 </body>
