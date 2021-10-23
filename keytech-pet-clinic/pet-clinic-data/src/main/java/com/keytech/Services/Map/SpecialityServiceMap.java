@@ -2,10 +2,13 @@ package com.keytech.Services.Map;
 
 import java.util.Set;
 
-import com.keytech.Model.Speciality;
-import com.keytech.Services.SpecialtiesService;
+import org.springframework.stereotype.Service;
 
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialtiesService{
+import com.keytech.Model.Speciality;
+import com.keytech.Services.SpecialtyService;
+
+@Service
+public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialtyService{
 
 	@Override
 	public
