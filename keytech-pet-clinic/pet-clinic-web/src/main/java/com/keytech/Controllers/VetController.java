@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.keytech.Services.VetService;
 
-@RequestMapping("/vets")
 @Controller
 public class VetController {
 	
@@ -19,12 +18,13 @@ public class VetController {
 
 
 
-	@RequestMapping({"", "/", "/index", "/index.html"})
+	@RequestMapping({"/vets", "/vets.html", "/vets/", "/vets/index", "/vets/index.html"})
 	public String listVets(Model model) {
 		
 		model.addAttribute("vets", vetService.findAll());
 		
 		return "Vets/index";
 	}
+	
 	
 }
