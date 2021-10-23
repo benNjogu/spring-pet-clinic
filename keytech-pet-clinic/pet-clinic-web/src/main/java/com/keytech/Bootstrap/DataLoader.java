@@ -1,11 +1,14 @@
 package com.keytech.Bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.keytech.Services.OwnerService;
 import com.keytech.Services.PetTypeService;
 import com.keytech.Model.Owner;
+import com.keytech.Model.Pet;
 import com.keytech.Model.PetType;
 import com.keytech.Model.Vet;
 import com.keytech.Services.VetService;
@@ -41,12 +44,34 @@ public class DataLoader implements CommandLineRunner{
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Alice");
 		owner1.setLastName("Wairimu");
+		owner1.setAdderess("kihingo001");
+		owner1.setCity("Murang'a");
+		owner1.setTelephone("+2547 345 678");
+		
+		Pet alicePet = new Pet();
+		alicePet.setPetType(savedDogPetType);
+		alicePet.setOwner(owner1);
+		alicePet.setName("kadogo");
+		alicePet.setBirthDate(LocalDate.now());
+		
+		owner1.getPets().add(alicePet);
 		
 		ownerService.save(owner1);
 		
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Dedan");
 		owner2.setLastName("Njogu");
+		owner2.setAdderess("kihingo001254");
+		owner2.setCity("Murang'a");
+		owner2.setTelephone("+2547 879 678");
+		
+		Pet njoguPet = new Pet();
+		njoguPet.setPetType(savedCatPetType);
+		njoguPet.setOwner(owner2);
+		njoguPet.setName("kanyau");
+		njoguPet.setBirthDate(LocalDate.now());
+		
+		owner2.getPets().add(njoguPet);
 		
 		ownerService.save(owner2);
 		
