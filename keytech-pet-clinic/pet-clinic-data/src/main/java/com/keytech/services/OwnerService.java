@@ -1,7 +1,7 @@
-package com.keytech.Services;
+package com.keytech.services;
 
 
-import com.keytech.Model.Owner;
+import com.keytech.model.Owner;
 
 public interface OwnerService extends CrudService<Owner, Long>{
 

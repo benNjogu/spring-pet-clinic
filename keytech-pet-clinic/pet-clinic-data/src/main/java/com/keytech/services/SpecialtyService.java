@@ -1,6 +1,6 @@
-package com.keytech.Services;
+package com.keytech.services;
 
-import com.keytech.Model.Speciality;
+import com.keytech.model.Speciality;
 
 public interface SpecialtyService extends CrudService<Speciality, Long>{
 

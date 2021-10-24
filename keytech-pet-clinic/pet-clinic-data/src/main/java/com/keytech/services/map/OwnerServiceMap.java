@@ -1,14 +1,14 @@
-package com.keytech.Services.Map;
+package com.keytech.services.map;
 
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import com.keytech.Model.Owner;
-import com.keytech.Model.Pet;
-import com.keytech.Services.OwnerService;
-import com.keytech.Services.PetService;
-import com.keytech.Services.PetTypeService;
+import com.keytech.model.Owner;
+import com.keytech.model.Pet;
+import com.keytech.services.OwnerService;
+import com.keytech.services.PetService;
+import com.keytech.services.PetTypeService;
 import com.sun.istack.FinalArrayList;
 
 import net.bytebuddy.implementation.bytecode.Throw;

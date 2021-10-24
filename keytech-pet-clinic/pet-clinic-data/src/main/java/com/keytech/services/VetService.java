@@ -1,6 +1,6 @@
-package com.keytech.Services;
+package com.keytech.services;
 
-import com.keytech.Model.Vet;
+import com.keytech.model.Vet;
 
 public interface VetService extends CrudService<Vet, Long> {
 
