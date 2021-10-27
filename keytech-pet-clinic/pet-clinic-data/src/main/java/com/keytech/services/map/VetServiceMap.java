@@ -1,13 +1,13 @@
-package com.keytech.Services.Map;
+package com.keytech.services.map;
 
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import com.keytech.Model.Speciality;
-import com.keytech.Model.Vet;
-import com.keytech.Services.SpecialtyService;
-import com.keytech.Services.VetService;
+import com.keytech.model.Speciality;
+import com.keytech.model.Vet;
+import com.keytech.services.SpecialtyService;
+import com.keytech.services.VetService;
 
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService{

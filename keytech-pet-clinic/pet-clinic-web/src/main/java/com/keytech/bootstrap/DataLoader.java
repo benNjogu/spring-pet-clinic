@@ -1,19 +1,19 @@
-package com.keytech.Bootstrap;
+package com.keytech.bootstrap;
 
 import java.time.LocalDate;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.keytech.Services.OwnerService;
-import com.keytech.Services.PetTypeService;
-import com.keytech.Services.SpecialtyService;
-import com.keytech.Model.Owner;
-import com.keytech.Model.Pet;
-import com.keytech.Model.PetType;
-import com.keytech.Model.Speciality;
-import com.keytech.Model.Vet;
-import com.keytech.Services.VetService;
+import com.keytech.model.Owner;
+import com.keytech.model.Pet;
+import com.keytech.model.PetType;
+import com.keytech.model.Speciality;
+import com.keytech.model.Vet;
+import com.keytech.services.OwnerService;
+import com.keytech.services.PetTypeService;
+import com.keytech.services.SpecialtyService;
+import com.keytech.services.VetService;
 
 @Component
 public class DataLoader implements CommandLineRunner{

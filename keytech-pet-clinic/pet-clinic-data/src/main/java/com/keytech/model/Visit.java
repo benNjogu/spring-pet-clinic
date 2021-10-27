@@ -1,4 +1,4 @@
-package com.keytech.Model;
+package com.keytech.model;
 
 import java.time.LocalDate;
 

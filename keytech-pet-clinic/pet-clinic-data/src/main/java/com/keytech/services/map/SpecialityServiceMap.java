@@ -1,30 +1,30 @@
-package com.keytech.Services.Map;
+package com.keytech.services.map;
 
 import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import com.keytech.Model.PetType;
-import com.keytech.Services.PetTypeService;
+import com.keytech.model.Speciality;
+import com.keytech.services.SpecialtyService;
 
 @Service
-public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService{
+public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialtyService{
 
 	@Override
 	public
-	Set<PetType> findAll() {
+	Set<Speciality> findAll() {
 		return super.findAll();
 	}
 
 	@Override
 	public
-	PetType findById(Long id) {
+	Speciality findById(Long id) {
 		return super.findById(id);
 	}
 
 	@Override
 	public
-	PetType save(PetType object) {
+	Speciality save(Speciality object) {
 		return super.save(object);
 	}
 
@@ -36,9 +36,10 @@ public class PetTypeServiceMap extends AbstractMapService<PetType, Long> impleme
 
 	@Override
 	public
-	void delete(PetType object) {
+	void delete(Speciality object) {
 		super.delete(object);
 	}
 
+	
 	
 }

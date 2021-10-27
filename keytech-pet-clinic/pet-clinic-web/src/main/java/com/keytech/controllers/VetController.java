@@ -1,10 +1,10 @@
-package com.keytech.Controllers;
+package com.keytech.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.keytech.Services.VetService;
+import com.keytech.services.VetService;
 
 @Controller
 public class VetController {

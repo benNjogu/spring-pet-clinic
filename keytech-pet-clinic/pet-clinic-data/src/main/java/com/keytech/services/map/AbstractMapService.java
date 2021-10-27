@@ -1,4 +1,4 @@
-package com.keytech.Services.Map;
+package com.keytech.services.map;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-import com.keytech.Model.BaseEntity;
+import com.keytech.model.BaseEntity;
 
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> {
 
