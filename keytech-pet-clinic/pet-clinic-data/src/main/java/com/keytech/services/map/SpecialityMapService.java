@@ -2,12 +2,14 @@ package com.keytech.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.keytech.model.Speciality;
 import com.keytech.services.SpecialtyService;
 
 @Service
+@Profile({"default","map"})
 public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialtyService{
 
 	@Override
