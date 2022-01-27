@@ -1,9 +1,14 @@
 package com.keytech.controllers;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.verifyNoInteractions;
+import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.hamcrest.Matchers.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -49,14 +54,34 @@ class OwnerControllerTest {
 	void testListOwners() throws Exception {
 		
 		when(ownerService.findAll()).thenReturn(owners);
-		//HTTP status
+		
 		mockMvc.perform(get("/owners"))
-				.andExpect(status().isOk());
+				.andExpect(status().isOk())//HTTP status
+				.andExpect(view().name("/Owners/index"))//View
+				.andExpect(model().attribute("owners", hasSize(2)))//Number of owners
+				;
 	}
 
 	@Test
-	void testFindOwners() {
-		fail("Not yet implemented");
+	void testListOwnersByIndex() throws Exception {
+		
+		when(ownerService.findAll()).thenReturn(owners);
+		
+		mockMvc.perform(get("/owners/index"))
+				.andExpect(status().isOk())//HTTP status
+				.andExpect(view().name("/Owners/index"))//View
+				.andExpect(model().attribute("owners", hasSize(2)))//Number of owners
+				;
+	}
+	
+	@Test
+	void testFindOwners() throws Exception {
+		
+		mockMvc.perform(get("/owners/find"))
+				.andExpect(status().isOk())
+				.andExpect(view().name("notimplemented"));
+		
+		verifyNoInteractions(ownerService);
 	}
 
 }
