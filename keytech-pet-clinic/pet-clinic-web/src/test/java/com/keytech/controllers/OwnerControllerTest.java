@@ -49,6 +49,7 @@ class OwnerControllerTest {
 	void testListOwners() throws Exception {
 		
 		when(ownerService.findAll()).thenReturn(owners);
+		//HTTP status
 		mockMvc.perform(get("/owners"))
 				.andExpect(status().isOk());
 	}
