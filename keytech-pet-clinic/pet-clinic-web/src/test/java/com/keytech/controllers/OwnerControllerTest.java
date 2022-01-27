@@ -50,7 +50,7 @@ class OwnerControllerTest {
 		
 		when(ownerService.findAll()).thenReturn(owners);
 		mockMvc.perform(get("/owners"))
-				.andExpect(status().is(200));
+				.andExpect(status().isOk());
 	}
 
 	@Test
