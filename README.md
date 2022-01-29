@@ -1,2 +1,2 @@
 # keytech-pet-clinic
-Pet Clinic by KeyTech
+Learning spring boot using the popular Spring Pet Clinic
