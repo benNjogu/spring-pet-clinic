@@ -10,7 +10,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.hamcrest.Matchers.*;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -51,44 +53,38 @@ class OwnerControllerTest {
 	}
 
 	@Test
-	void testListOwners() throws Exception {
-		
-		when(ownerService.findAll()).thenReturn(owners);
-		
-		mockMvc.perform(get("/owners"))
-				.andExpect(status().isOk())//HTTP status
-				.andExpect(view().name("/Owners/index"))//View
-				.andExpect(model().attribute("owners", hasSize(2)))//Number of owners
-				;
-	}
-
-	@Test
-	void testListOwnersByIndex() throws Exception {
-		
-		when(ownerService.findAll()).thenReturn(owners);
-		
-		mockMvc.perform(get("/owners/index"))
-				.andExpect(status().isOk())//HTTP status
-				.andExpect(view().name("/Owners/index"))//View
-				.andExpect(model().attribute("owners", hasSize(2)))//Number of owners
-				;
-	}
-	
-	@Test
 	void testFindOwners() throws Exception {
 		
 		mockMvc.perform(get("/owners/find"))
 				.andExpect(status().isOk())
-				.andExpect(view().name("notimplemented"));
+				.andExpect(view().name("owners/findOwners"))
+				.andExpect(model().attributeExists("owner"));
 		
 		verifyNoInteractions(ownerService);
 	}
 	
 	@Test
-	void displayOwner() throws Exception {
-		Owner owner = Owner.builder().id(1L).build();
+	void processFindFormReturnMany() throws Exception {
+		when(ownerService.findAllByLastNameLike(any())).thenReturn(Arrays.asList(
+				Owner.builder().id(1l).build(), Owner.builder().id(2l).build()));
 		
-		when(ownerService.findById(any())).thenReturn(owner);
+		mockMvc.perform(get("/owners"))
+				.andExpect(status().isOk())
+				.andExpect(view().name("owners/ownersList"))
+				.andExpect(model().attribute("selections", hasSize(2)));
+	}
+	
+	@Test
+	void processFindFormReturnOne() throws Exception {
+		when(ownerService.findAllByLastNameLike(any())).thenReturn(Arrays.asList(Owner.builder().id(1l).build()));
+		mockMvc.perform(get("/owners"))
+				.andExpect(status().is3xxRedirection())
+				.andExpect(view().name("redirect:/owners/1"));
+	}
+	
+	@Test
+	void displayOwner() throws Exception {
+		when(ownerService.findById(any())).thenReturn(Owner.builder().id(1l).build());
 		mockMvc.perform(get("/owners/1"))
 				.andExpect(status().isOk())
 				.andExpect(view().name("owners/ownerDetails"))
