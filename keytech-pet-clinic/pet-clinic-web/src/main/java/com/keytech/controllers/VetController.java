@@ -23,7 +23,7 @@ public class VetController {
 		
 		model.addAttribute("vets", vetService.findAll());
 		
-		return "Vets/index";
+		return "vets/index";
 	}
 	
 	
