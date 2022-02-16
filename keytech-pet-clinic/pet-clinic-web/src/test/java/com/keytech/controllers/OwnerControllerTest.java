@@ -2,8 +2,8 @@ package com.keytech.controllers;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verifyNoInteractions;
-import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
+import static org.mockito.Matchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -82,6 +82,17 @@ class OwnerControllerTest {
 				.andExpect(view().name("notimplemented"));
 		
 		verifyNoInteractions(ownerService);
+	}
+	
+	@Test
+	void displayOwner() throws Exception {
+		Owner owner = Owner.builder().id(1L).build();
+		
+		when(ownerService.findById(any())).thenReturn(owner);
+		mockMvc.perform(get("/owners/1"))
+				.andExpect(status().isOk())
+				.andExpect(view().name("owners/ownerDetails"))
+				.andExpect(model().attribute("owner", hasProperty("id", is(1l))));
 	}
 
 }
