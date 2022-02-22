@@ -70,6 +70,7 @@ public class PetController {
 			result.rejectValue("name", "duplicate", "alreadyExists");
 		}
 		owner.getPets().add(pet);
+		pet.setOwner(owner);
 		if (result.hasErrors()) {
 			model.addAttribute("pet", pet);
 			return VIEWS_PET_CREATE_OR_UPDATE_FORM;
